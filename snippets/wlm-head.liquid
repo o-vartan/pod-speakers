@@ -1,0 +1,426 @@
+<script type='text/javascript' src='https://podspeakersdk.myshopify.com/apps/wlm/js/wlm-1.1.js'></script>
+{% assign wlmEnabled = true %}
+{% assign wlmLockON = false %}
+{% assign wlmRedirectURL = '' %} 
+{% assign wlmPnfHead = '' %} 
+{% assign wlmPnfMsg = '' %}
+{% assign wlmPwdForm = false %}
+{% assign wlmPwdMsg = '' %}
+{% assign wlmSuperPage = false %}
+
+{% if template == 'customers/login' or template == 'customers/activate_account' or template == 'customers/reset_password' %}
+{% assign wlmSuperPage = true %}
+{% endif %}
+
+{% if wlmEnabled %}
+<style type="text/css">.wlm-message-pnf{text-align:center;}#wlm-pwd-form {padding: 30px 0;text-align: center}#wlm-wrapper,.wlm-form-holder {display: inline-block}#wlm-pwd-error {display: none;color: #fb8077;text-align: left}#wlm-pwd-error.wlm-error {border: 1px solid #fb8077}#wlm-pwd-form-button {display: inline-block!important;height: auto!important;padding: 8px 15px!important;background: #777;border-radius: 3px!important;color: #fff!important;text-decoration: none!important;vertical-align: top}.wlm-instantclick-fix,.wlm-item-selector {position: absolute;z-index: -999;display: none;height: 0;width: 0;font-size: 0;line-height: 0}</style>
+
+{% for tag in customer.tags %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24310 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24311 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24309 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24312 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24313 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24314 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24315 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24316 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24317 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24318 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24319 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24320 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24321 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24322 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24323 = true %}{% endif %}
+{% if tag == 'dealer' %}{% assign wlmLockedTags24324 = true %}{% endif %}
+{% if tag == 'dealers' %}{% assign wlmLockedTags24325 = true %}{% endif %}
+{% endfor %}
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 45545029680 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}login{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24309 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}login{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48379002928 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24312 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48378216496 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24310 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48378839088 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24311 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48378937392 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24313 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48379035696 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24314 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48381427760 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24315 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48425599024 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24316 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48385425456 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24317 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48424812592 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24318 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48425271344 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24319 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48381493296 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24320 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48381722672 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24321 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48425828400 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24322 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48425664560 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24323 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48385032240 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24324 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% unless wlmLockON or wlmSuperPage or template == 'customers/register' %}
+{% assign wlmLockedContent = false %}
+{% if template contains 'page' and page %}{% if page.id == 48385196080 %}{% assign wlmLockedContent = true %}{% endif %}{% endif %}
+{% if wlmLockedContent %}
+{% unless customer %}
+{% assign wlmLockON = true %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% else %}
+{% unless wlmLockedTags24325 %}{% assign wlmLockON = true %}{% endunless %}
+{% if wlmLockON %}
+{% capture wlmPnfHead %}Page not found{% endcapture %}
+{% capture wlmPnfMsg %}<p>Sorry, we couldn't find this page.</p>{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% capture wlmRedirectURL %}/pages/dealer-site{% endcapture %}
+{% endif %}
+{% endunless %}
+{% endif %}
+{% endunless %}
+
+
+{% assign wlmHideLinks=false %}
+{% endif %}
+
+{% if wlmLockON %}<meta name='robots' content='NOINDEX,NOFOLLOW,NOARCHIVE,NOSNIPPET,NOODP,NOYDIR' />{% endif %}
+
+      <script type='text/javascript'>
+      {% if wlmLockON %}
+        wlm.navigate('{{ wlmRedirectURL}}');
+      {% else %}
+        wlm.navigateByLocation();
+      {% endif %}
+
+      wlm.jq(document).ready(function(){
+        wlm.removeLinks();
+      });
+    </script>

@@ -1,0 +1,677 @@
+{
+  "current": {
+    "heading_color": "#0c0c0d",
+    "text_color": "#000000",
+    "light_text_color": "#a1a1a6",
+    "footer-text-color": "#ffffff",
+    "accent_color": "#97a0a6",
+    "background": "#f8f1e5",
+    "newsletter-bg": "#ffffff",
+    "footer_background": "#043730",
+    "secondary_background": "#f8f1e5",
+    "special_font_color": "#000000",
+    "secondary_background_pattern": "",
+    "primary_button_color": "#ffffff",
+    "primary_button_background": "#191817",
+    "secondary_button_color": "#ffffff",
+    "secondary_button_background": "#0c0c0d",
+    "product_features_color": "#ffffff",
+    "product_features_background": "#141415",
+    "product_on_sale_label_background": "#3f3fd7",
+    "product_unavailable_label_background": "#000000",
+    "heading_font": "ibm_plex_sans_n4",
+    "text_font": "open_sans_n4",
+    "font_size": "0",
+    "slideshow_heading_font": "ibm_plex_sans_n4",
+    "currency_conversion_enabled": false,
+    "currency_conversion_supported_currencies": "USD CAD EUR GBP",
+    "currency_conversion_default_currency": "USD",
+    "search_mode": "product",
+    "product_show_vendor": false,
+    "cart_type": "drawer",
+    "empty_cart_link": "shopify:\/\/collections\/all",
+    "share_image": "",
+    "social_facebook": "https:\/\/www.facebook.com\/podspeakers\/",
+    "social_twitter": "https:\/\/twitter.com\/Podspeakersdk",
+    "social_google_plus": "",
+    "social_pinterest": "",
+    "social_instagram": "https:\/\/www.instagram.com\/podspeakers\/",
+    "social_vimeo": "",
+    "social_tumblr": "",
+    "social_youtube": "https:\/\/www.youtube.com\/channel\/UC8uftvqAorKtjxxkDn7xJIg",
+    "social_fancy": "",
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "top_bar_color": "#ffffff",
+    "top_bar_background": "#0c0c0d",
+    "sections": {
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "popup_enabled": false,
+          "popup_heading": "Popup",
+          "popup_content": "<p>You can use this popup to display some useful information to your customers.<\/p>",
+          "popup_show_newsletter": false,
+          "popup_delay": 15,
+          "popup_only_on_index": true,
+          "popup_only_visitors": true,
+          "popup_remember_me": "7"
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "show_announcement": false,
+          "home_page_only": false,
+          "announcement_text": "Announce something here",
+          "announcement_link": "",
+          "announcement_color": "#ffffff",
+          "announcement_background": "#0c0c0d"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "show_tall_header": true,
+          "logo": "shopify:\/\/shop_images\/Logo_2x_c22bbb0d-242d-4807-a472-e8aa1c5487cd.png",
+          "logo_max_width": 200,
+          "logo_position": "left",
+          "mobile_logo": "shopify:\/\/shop_images\/Logo_1x.png",
+          "navigation_menu": "collections",
+          "mobile_expand_nav_first_level": false
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+          "show_newsletter": true,
+          "title": "Modtag nyheder, tips og tilbud...",
+          "content": "<p><\/p>\n<p>Ja tak - jeg vil gerne modtage nyhedsbrev.<\/p>",
+          "newsletter_image": "",
+          "apply_newsletter_gradient": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1570805317808": {
+            "type": "links",
+            "settings": {
+              "menu_linklist": "main-menu"
+            }
+          },
+          "1570805363578": {
+            "type": "links",
+            "settings": {
+              "menu_linklist": "customer-care"
+            }
+          },
+          "1570805383856": {
+            "type": "links",
+            "settings": {
+              "menu_linklist": "footer"
+            }
+          },
+          "1571752511679": {
+            "type": "links",
+            "settings": {
+              "menu_linklist": "dealers"
+            }
+          },
+          "1573909811001": {
+            "type": "change-lng",
+            "settings": {
+              "change_lang_header": "Select your website",
+              "change_lang_title": "You are on the danish Podspeakers site",
+              "change_lang_text2": "<p>If you live in Denmark and want to purchase<br>products from Podspeakers, you&rsquo;re in the <br>right place.<\/p>\n<p><\/p>\n<p>If you live in the EU, please select &ldquo;International&rdquo;<br>and we will redirect you to the international Podspeakers website.<\/p>",
+              "linkEU": "https:\/\/podspeakers.com\/",
+              "linkDK": "https:\/\/dk.podspeakers.com\/"
+            }
+          }
+        },
+        "block_order": [
+          "1570805317808",
+          "1570805363578",
+          "1570805383856",
+          "1571752511679",
+          "1573909811001"
+        ],
+        "settings": {
+          "show_payment_methods": false,
+          "logo": "shopify:\/\/shop_images\/Logo_2x_6ab1efa4-571d-44ab-90d0-51b2cf1fcec9.png",
+          "show_social_media1": true,
+          "copyright": "2020 · Podspeakers A\/S · Smedeskovvej 81 · DK-8464 Galten · Denmark · VAT No. 40198121"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "show_price": false,
+          "show_overlay": false,
+          "show_tag_filters": true,
+          "show_sort_by": false,
+          "grid_items_per_row": 2,
+          "grid_number_of_rows": 5,
+          "show_color_swatch": false,
+          "image_dimension": "small",
+          "show_instagram": false,
+          "instagram_title": "",
+          "instagram_access_token": ""
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "show_description": true,
+          "grid_items_per_row": 2
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_extra_options": true,
+          "bundle-products-block": true,
+          "first-bundle-heading": "HiFi all the way",
+          "show_product_set": "bigpod-mk3-hojttaler",
+          "allow_selecting_sold_out_variants": true,
+          "hide_variants_if_only_one": true,
+          "show_color_swatch": true,
+          "show_size_swatch": false,
+          "show_quantity_selector": true,
+          "show_share_buttons": false,
+          "show_payment_button": false,
+          "enable_image_zoom": false,
+          "tab_page_1_handle": "",
+          "tab_page_2_handle": "",
+          "reviews_enabled": false,
+          "image_max_widt": ""
+        }
+      },
+      "product-features": {
+        "type": "product-features",
+        "settings": {}
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": false,
+          "heading": "You may also like",
+          "show_related_products_color_swatch": false,
+          "related_products_image_dimension": "small"
+        }
+      },
+      "password-template": {
+        "type": "password-template",
+        "settings": {
+          "password_background_image": "shopify:\/\/shop_images\/BigPod_MKIII_red_floor3.jpg",
+          "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "blocks": {
+          "blog-template-0": {
+            "type": "newsletter",
+            "settings": {
+              "newsletter_background": "",
+              "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+            }
+          },
+          "blog-template-1": {
+            "type": "tags",
+            "settings": {}
+          },
+          "blog-template-2": {
+            "type": "social_media",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "blog-template-0",
+          "blog-template-1",
+          "blog-template-2"
+        ],
+        "settings": {
+          "show_blog_name": false,
+          "show_author_name": true,
+          "show_date": true,
+          "articles_per_page": 2
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "show_notes": true,
+          "show_shipping_estimator": true,
+          "shipping_estimator_default_country": "United States"
+        }
+      },
+      "cart-recommended-products": {
+        "type": "cart-recommended-products",
+        "blocks": {
+          "cart-recommended-products-0": {
+            "type": "product",
+            "settings": {
+              "product": ""
+            }
+          },
+          "cart-recommended-products-1": {
+            "type": "product",
+            "settings": {
+              "product": ""
+            }
+          },
+          "cart-recommended-products-2": {
+            "type": "product",
+            "settings": {
+              "product": ""
+            }
+          },
+          "cart-recommended-products-3": {
+            "type": "product",
+            "settings": {
+              "product": ""
+            }
+          }
+        },
+        "block_order": [
+          "cart-recommended-products-0",
+          "cart-recommended-products-1",
+          "cart-recommended-products-2",
+          "cart-recommended-products-3"
+        ],
+        "settings": {
+          "show_related_products": false,
+          "title": "You may also like",
+          "show_color_swatch": true,
+          "image_dimension": "normal"
+        }
+      },
+      "1573559607466": {
+        "type": "image-with-link-and-header",
+        "settings": {
+          "reverse": false,
+          "siwlah_picture-left": "shopify:\/\/shop_images\/1126-1080-dog-and-minipod.jpg",
+          "siwlah_title": "MiniPod",
+          "siwlah_heading": "",
+          "siwlah_text": "",
+          "link": "shopify:\/\/products\/minipod-mk4",
+          "siwlah_button_text": "DKK 2.499",
+          "siwlah_picture-right": "shopify:\/\/shop_images\/368x480-white.png"
+        }
+      },
+      "1573566273950": {
+        "type": "image-with-link-and-header",
+        "settings": {
+          "reverse": true,
+          "siwlah_picture-left": "shopify:\/\/shop_images\/Shaping_Sound_1x.jpg",
+          "siwlah_title": "Shaping sound",
+          "siwlah_heading": "",
+          "siwlah_text": "The vision of Simon Ghahary, the man behind Podspeakers – ‘Shaping Sound’ – became representative of his desire to create a new, unique design where form follows function to transform and optimize the audio experience compared to traditional speaker design.",
+          "link": "https:\/\/dk.podspeakers.com\/pages\/our-story",
+          "siwlah_button_text": "Shaping sound",
+          "siwlah_picture-right": "shopify:\/\/shop_images\/1024x992-white-Gold-MiniPod_set.png"
+        }
+      },
+      "1573567308785": {
+        "type": "cart-img-text-header",
+        "blocks": {
+          "1573568827253": {
+            "type": "cart",
+            "settings": {
+              "sith_img": "shopify:\/\/shop_images\/1052-bigpod-mk3.jpg",
+              "sith_link": "https:\/\/dk.podspeakers.com\/products\/bigpod-mk3",
+              "sith_heading": "BigPod MK3",
+              "sith_text": "For those with larger living spaces who wish to make a statement both with sound and design, the BigPod is the perfect choice."
+            }
+          },
+          "1573568954855": {
+            "type": "cart",
+            "settings": {
+              "sith_img": "shopify:\/\/shop_images\/BigPod_Stereo_1x_8a115f38-eb06-4514-b565-3fef41ac23ca.jpg",
+              "sith_link": "https:\/\/dk.podspeakers.com\/products\/bigpod-stereo-pack",
+              "sith_heading": "BigPod Stereo Pack",
+              "sith_text": "The clue is in the title; in comparison to the MiniPod, the BigPod is considerably larger and was added to the range after demands for a larger speaker that could deliver more bass for larger rooms."
+            }
+          }
+        },
+        "block_order": [
+          "1573568827253",
+          "1573568954855"
+        ],
+        "settings": {}
+      },
+      "search-template": {
+        "type": "search-template",
+        "settings": {
+          "search_background": "rgba(0,0,0,0)",
+          "grid_items_per_row": 4,
+          "grid_number_of_rows": 6,
+          "show_color_swatch": true,
+          "image_dimension": "normal"
+        }
+      },
+      "1573825638916": {
+        "type": "cart-img-text-header",
+        "blocks": {
+          "1573826754907": {
+            "type": "cart",
+            "settings": {
+              "sith_img": "shopify:\/\/shop_images\/1052-hoops-spikes.jpg",
+              "sith_link": "https:\/\/dk.podspeakers.com\/collections\/accessories",
+              "sith_heading": "Hoops, spikes, and more",
+              "sith_text": "You can style your Podspeaker any way you want. Select your preferred hoops and spikes, or try the wall mount for MicroPod, MiniPod or The Drop."
+            }
+          },
+          "1573826771966": {
+            "type": "cart",
+            "settings": {
+              "sith_img": "shopify:\/\/shop_images\/1052-micropod-wall-mount_11b8f415-5039-4bb3-9690-9a90073d52a6.jpg",
+              "sith_link": "https:\/\/dk.podspeakers.com\/products\/micropod-classic",
+              "sith_heading": "MicroPod Classic",
+              "sith_text": "This small, almost spherical, palm-sized loudspeaker has now been upgraded and comes in a nice white and black high gloss finish. Put in on a shelf, use it with three spikes or get the special wall brackets."
+            }
+          }
+        },
+        "block_order": [
+          "1573826754907",
+          "1573826771966"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "1573559607466",
+      "1573567308785",
+      "1573825638916",
+      "1573566273950"
+    ]
+  },
+  "presets": {
+    "Gold": {
+      "heading_color": "#0c0c0d",
+      "text_color": "#66656e",
+      "light_text_color": "#a1a1a6",
+      "accent_color": "#c6a85b",
+      "background": "#ffffff",
+      "secondary_background": "#f0f0f0",
+      "primary_button_color": "#ffffff",
+      "primary_button_background": "#c6a85b",
+      "secondary_button_color": "#ffffff",
+      "secondary_button_background": "#0c0c0d",
+      "top_bar_color": "#ffffff",
+      "top_bar_background": "#0c0c0d",
+      "product_features_color": "#ffffff",
+      "product_features_background": "#141415",
+      "product_on_sale_label_background": "#3f3fd7",
+      "product_unavailable_label_background": "#000000",
+      "heading_font": "rajdhani_n5",
+      "text_font": "rajdhani_n4",
+      "slideshow_heading_font": "rajdhani_n4",
+      "font_size": "0",
+      "sections": {
+        "slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "heading_color": "#c6a85b"
+              }
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {
+                "heading_color": "#c6a85b"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "type": "dual"
+          }
+        },
+        "text-with-optional-image": {
+          "type": "text-with-optional-image",
+          "settings": {}
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {}
+        },
+        "image-with-text-overlay": {
+          "type": "image-with-text-overlay",
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "testimonials": {
+          "type": "testimonials",
+          "blocks": {
+            "testimonial-0": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-0",
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-article",
+          "blocks": {
+            "blog": {
+              "type": "blog",
+              "settings": {
+                "blog": "news"
+              }
+            }
+          },
+          "block_order": [
+            "blog"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "text-with-optional-image",
+        "collection-list",
+        "image-with-text-overlay",
+        "featured-collection",
+        "testimonials",
+        "featured-blog"
+      ]
+    },
+    "Rose": {
+      "heading_color": "#0c0c0d",
+      "text_color": "#75737e",
+      "light_text_color": "#918ea0",
+      "accent_color": "#e11687",
+      "background": "#ffffff",
+      "secondary_background": "#f5f4ff",
+      "primary_button_color": "#ffffff",
+      "primary_button_background": "#e11687",
+      "secondary_button_color": "#ffffff",
+      "secondary_button_background": "#0c0c0d",
+      "top_bar_color": "#ffffff",
+      "top_bar_background": "#0c0c0d",
+      "product_features_color": "#ffffff",
+      "product_features_background": "#141415",
+      "product_on_sale_label_background": "#3f3fd7",
+      "product_unavailable_label_background": "#000000",
+      "heading_font": "amiri_n7",
+      "text_font": "source_sans_pro_n4",
+      "slideshow_heading_font": "amiri_n7",
+      "font_size": "1",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_tall_header": true
+          }
+        },
+        "slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "heading_color": "#ffffff"
+              }
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {
+                "heading_color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "type": "full_width"
+          }
+        },
+        "text-with-optional-image": {
+          "type": "text-with-optional-image",
+          "settings": {}
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {}
+        },
+        "image-with-text-overlay": {
+          "type": "image-with-text-overlay",
+          "settings": {
+            "overlay_color": "#81b0e1"
+          }
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "testimonials": {
+          "type": "testimonials",
+          "blocks": {
+            "testimonial-0": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-0",
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-article",
+          "blocks": {
+            "blog": {
+              "type": "blog",
+              "settings": {
+                "blog": "news"
+              }
+            }
+          },
+          "block_order": [
+            "blog"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "text-with-optional-image",
+        "collection-list",
+        "image-with-text-overlay",
+        "featured-collection",
+        "testimonials",
+        "featured-blog"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{%- assign force_secondary_background = true -%}
+
+<div class="page__content-wrapper pt-0">
+  <div class="container">
+      {%- if page.metafields.global.header_image != blank -%}
+        <div class="page__subPage-header-image">
+            <img src="{{ page.metafields.global.header_image }}" alt="" >       
+        </div>
+      {%- endif -%}
+
+{%- comment -%}
+    <div class="page__header">
+      <h1 class="page__title h1">{{ page.title }}</h1>
+    </div>
+{%- endcomment -%}
+
+    <div class="page__subPage">
+      <div class="page__subPage-content">
+        {{ page.content }}
+      </div>
+
+    </div>
+    {%- if page.metafields.global.footer_image != blank -%}
+      <div class="page__subPage-footer_image">
+          <img style=" width: 100%;" src="{{ page.metafields.global.footer_image }}" alt="" >       
+      </div>
+  {%- endif -%}
+  </div>
+</div>   

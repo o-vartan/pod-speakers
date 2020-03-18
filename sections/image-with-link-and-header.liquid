@@ -1,0 +1,110 @@
+<section class="s-image-with-link-and-header s-i-w-l-a-h section-{{ section.id }}">
+    <div class="container">
+        <div class="s-i-w-l-a-h__block" 
+             style="{%- if section.settings.reverse -%} flex-flow: row-reverse; {%- endif -%}">
+
+            <div class="s-i-w-l-a-h__left-img">      
+                <img src="{{ section.settings.siwlah_picture-left | img_url: '1126x1080' }}" alt="">  
+            </div>
+
+            <div class="s-i-w-l-a-h__content">  
+                  <div class="s-i-w-l-a-h__title">
+                    <h1>{{ section.settings.siwlah_title }}</h1>   
+                  </div> 
+                <div class="s-i-w-l-a-h__heading">
+                    <h3>{{ section.settings.siwlah_heading }}</h3> 
+                </div>
+
+                {%- if section.settings.siwlah_text != blank-%}
+                    <div class="s-i-w-l-a-h__text">
+                        <p>{{ section.settings.siwlah_text }}</p>    
+                    </div> 
+                {%- endif -%}
+                {%- if section.settings.siwlah_text == blank-%}
+                    {%- if section.settings.siwlah_picture-right != blank-%}
+                        <div class="s-i-w-l-a-h__small-img">
+                            <img src="{{ section.settings.siwlah_picture-right | img_url: '560x540' }}" alt="">  
+                        </div> 
+                    {%- endif -%}
+                {%- endif -%}
+
+                <button class="s-i-w-l-a-h__button button-collection">
+                    <a href="{{ section.settings.link }}" class="product-item__link">
+                            {{ section.settings.siwlah_button_text }}
+                    </a>
+                </button>
+            </div> 
+       
+        </div>
+    </div>
+</section>
+  
+  
+  
+  {% schema %}
+  { 
+    "name":"Image, link and header",
+    "settings":[ 
+       { 
+          "type":"checkbox",
+          "id":"reverse",
+          "label":"Reverse",
+          "default":false
+       },
+       { 
+        "type":"image_picker",
+        "id":"siwlah_picture-left",
+        "label":"Big picture",
+        "info":"1126 x 1080px .jpg recommended"
+        },
+        { 
+            "type":"text",
+            "id":"siwlah_title",
+            "label":"Title",
+            "default":"Title"
+        },
+        { 
+            "type":"text",
+            "id":"siwlah_heading",
+            "label":"Heading",
+            "default":"Heading"
+        },
+        { 
+            "type":"text",
+            "id":"siwlah_text",
+            "label":"Text",
+            "default":"Text"
+        },
+        { 
+            "type":"url",
+            "id":"link",
+            "label":"Link"
+        },
+        { 
+            "type":"text",
+            "id":"siwlah_button_text",
+            "label":"Text",
+            "default":"Button text"
+        },
+        { 
+            "type":"image_picker",
+            "id":"siwlah_picture-right",
+            "label":"Small picture",
+            "info":"If the text field is empty 560 x 540px .jpg recommended"
+        }
+    ],
+    "presets":[ 
+       { 
+          "category":"image",
+          "name":"Image with link and header"
+       }
+    ]
+  }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

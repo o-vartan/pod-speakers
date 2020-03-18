@@ -1,0 +1,86 @@
+<section class="s-photo-and-color-block s-p-a-c-b section-{{ section.id }}">
+        <div class="container">
+            <div class="s-p-a-c-b__block" 
+                 style="{%- if section.settings.reverse -%} flex-flow: row-reverse; {%- endif -%}">
+    
+                <div class="s-p-a-c-b__img">      
+                    <img src="{{ section.settings.spacb_picture-left | img_url: '550x' }}" alt="">  
+                </div>
+    
+                <div class="s-p-a-c-b__content"
+                     style="background-color:{{ section.settings.spacb_background }};">  
+
+                    <div class="s-p-a-c-b__title"
+                         style="color:{{ section.settings.spacb_font_color }};">
+                        <h3>{{ section.settings.spacb_title }}</h3>   
+                    </div> 
+               
+                    <div class="s-p-a-c-b__text"
+                         style="color:{{ section.settings.spacb_font_color }};">
+                        <p>{{ section.settings.spacb_text }}</p>    
+                    </div> 
+            
+                </div> 
+           
+            </div>
+        </div>
+</section>
+      
+      
+      
+      {% schema %}
+      { 
+        "name":"Photo and color block",
+        "settings":[ 
+           { 
+              "type":"checkbox",
+              "id":"reverse",
+              "label":"Reverse",
+              "default":false
+           },
+           { 
+            "type":"image_picker",
+            "id":"spacb_picture-left",
+            "label":"Big picture",
+            "info":"400 x 500px .jpg recommended"
+            },
+            { 
+                "type":"text",
+                "id":"spacb_title",
+                "label":"Title",
+                "default":"Title"
+            },
+            { 
+                "type":"richtext",
+                "id":"spacb_text",
+                "label":"Text",
+                "default":"<p>Text</p>"
+            },
+            {
+                "type": "color",
+                "id": "spacb_background",
+                "label": "Background",
+                "default": "#871321"
+            },
+            {
+                "type": "color",
+                "id": "spacb_font_color",
+                "label": "Font color",
+                "default": "#fff"
+            }
+        ],
+        "presets":[ 
+           { 
+              "category":"image",
+              "name":"Photo and color block"
+           }
+        ]
+      }
+      {% endschema %}
+      
+      {% stylesheet %}
+      {% endstylesheet %}
+      
+      {% javascript %}
+      {% endjavascript %}
+      

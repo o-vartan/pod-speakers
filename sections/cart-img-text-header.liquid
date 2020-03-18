@@ -1,0 +1,78 @@
+<section class="s-cart-img-text-header s-i-t-h section-{{ section.id }}">
+    <div class="container">
+        {%- for block in section.blocks -%}
+      
+            <div class="s-i-t-h__block">
+                <a href="{{ block.settings.sith_link }}">
+                    <div class="s-i-t-h__left-img">
+                        <img src="{{ block.settings.sith_img | img_url: '500x' }}" alt="">
+                    </div>
+                    <div class="s-i-t-h__content">
+                        <div class="s-i-t-h__heading">
+                            <h2>{{ block.settings.sith_heading }}</h2>
+                        </div>
+                        <div class="s-i-t-h__text">
+                            <p>{{ block.settings.sith_text }}</p>
+                        </div>
+                    </div>
+                </a>   
+            </div>
+      
+        {%- endfor -%}
+    </div>
+</section>
+
+    {% stylesheet %}
+    {% endstylesheet %}
+    
+    {% javascript %}
+    {% endjavascript %}
+
+    {% schema %}
+    { 
+      "name":"Image, link and header",
+      "settings":[ 
+
+      ],
+      "blocks": [
+      {
+        "type": "cart",
+        "name": "Cart",
+        "settings": [
+            { 
+            "type":"image_picker",
+            "id":"sith_img",
+            "label":"Picture",
+            "info":"400 x 500px .jpg recommended"
+            },
+            { 
+                "type":"url",
+                "id":"sith_link",
+                "label":"Link"
+            },
+            { 
+                "type":"text",
+                "id":"sith_heading",
+                "label":"Heading",
+                "default":"Heading"
+            },
+            { 
+                "type":"text",
+                "id":"sith_text",
+                "label":"Text",
+                "default":"Text"
+            }
+        ]
+      }
+    ],
+      "presets":[ 
+         { 
+            "category":"image",
+            "name":"Cart"
+         }
+      ]
+    }
+    {% endschema %}
+    
+
+    

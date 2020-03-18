@@ -1,0 +1,529 @@
+<div class="product"
+     id="product-{{ product.id }}"
+     data-allow-selecting-sold-out-variants="{% if section.settings.allow_selecting_sold_out_variants %}true{% else %}false{% endif %}"
+     data-enable-image-zoom="{% if section.settings.enable_image_zoom %}true{% else %}false{% endif %}">
+  <div class="page__content-wrapper page__content-wrapper--force-background">
+    <div class="container">
+      {%- include 'product-meta', for_mobile: true -%}
+
+      <div class="grid grid--large">
+        <div class="grid__cell 1/2--lap-and-up">
+          {% comment %}
+          -----------------------------------------------------
+          SLIDESHOW
+          -----------------------------------------------------
+          {% endcomment %}
+
+          <div class="product__slideshow" data-enable-image-zoom="{% if section.settings.enable_image_zoom %}true{% else %}false{% endif %}">
+            {%- assign initial_slide = 0 -%}
+
+            {%- if product.selected_or_first_available_variant.featured_image -%}
+              {%- assign initial_slide = product.selected_or_first_available_variant.featured_image.position | minus: 1 -%}
+            {%- endif -%}
+
+            <ul class="product__slides list--unstyled" data-initial-slide="{{ initial_slide }}">
+              {%- for image in product.images -%}
+                {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+                  <li class="product__slide product__slide--video" data-image-position="{{ forloop.index0 }}" data-image-id="{{ image.id }}" {% unless forloop.first %}style="display: none"{% endunless %}>
+                    <div class="product__slide-video-wrapper video-wrapper">
+                      <iframe class="product__video" width="560" height="349" src="{{ image.alt }}" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                  </li>
+                {%- else -%}
+                  <li class="product__slide" data-image-position="{{ forloop.index0 }}" data-image-id="{{ image.id }}" data-mfp-src="{{ image | img_url: '1500x' }}" {% unless forloop.first %}style="display: none"{% endunless %}>
+                    {%- assign max_height_mobile = 450 -%}
+                    {%- assign max_height_desktop = 700 -%}
+                    {%- assign max_width = 980 -%}
+                    {%- assign max_aspect_ratio = 1.50769 -%}
+
+                    {% if image.aspect_ratio < max_aspect_ratio %}
+                      {% if image.height < max_height_mobile %}
+                        {% assign max_width_mobile = image.width | times: image.aspect_ratio | round %}
+                      {% else %}
+                        {% assign max_width_mobile = max_height_mobile | times: image.aspect_ratio | round %}
+                      {% endif %}
+
+                      {% if image.height < max_height_desktop %}
+                        {% assign max_width_desktop = image.width | times: image.aspect_ratio | round %}
+                      {% else %}
+                        {% assign max_width_desktop = max_height_desktop | times: image.aspect_ratio | round %}
+                      {% endif %}
+                    {% else %}
+                      {% if image.width < max_width %}
+                        {% assign max_width_mobile = image.width %}
+                        {% assign max_width_desktop = image.width %}
+                      {% endif %}
+                    {% endif %}
+
+                    {%- include 'image-size', sizes: '200,300,400,600,800,900,1000,1200', image: image -%}
+                    {%- assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+  
+
+                    <div class="product__slide-wrapper" id="slide-wrapper-{{ image.id }}">
+                      <div class="aspect-ratio" style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%">
+                        <img class="product__slide-image lazyload image--fade-in"
+                             data-src="{{ image_url }}"
+                             data-widths="[{{ supported_sizes }}]"
+                             data-sizes="auto"
+                             alt="{{ image.alt | escape }}">
+
+                        <noscript>
+                          <img class="product__slide-image" src="{{ image | img_url: '1000x' }}" alt="{{ image.alt | escape }}">
+                        </noscript>
+                      </div>
+                    </div>
+
+      
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+            {%- if product.images.size > 1 -%}
+              <ul class="product__thumbnails list--unstyled">
+                {%- for image in product.images -%}
+                  <li class="product__thumbnail {% if forloop.first %}product__thumbnail--active{% endif %}" data-slide-index="{{ forloop.index0 }}">
+                    <span style="border-bottom: 3px solid black; color: transparent"><i class="fas fa-minus"></i></span>
+                    {% comment %}
+                    <img class="product__thumbnail-image" src="{{ image | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+                    {% endcomment %} 
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        </div>
+        
+        <div class="grid__cell 1/2--lap-and-up">
+          <div class="product__details">
+            {%- include 'product-meta', for_mobile: false -%}
+            {%- include 'product-form' -%}   
+          </div>
+        </div>        
+
+        {%- assign bundleProduct = all_products[product.metafields.global.custom_bundle] -%}
+        {%- assign bundleProduct2 = all_products[product.metafields.global.custom_bundle_2] -%}                  
+
+
+        {%- if bundleProduct!=blank -%}
+
+
+         <div class="grid__cell ">      
+           {%- if section.settings.bundle-products-block -%}
+           <div class="bundle-products">   
+
+           
+             <div class="bundle-products-block">
+               <a href="{{ bundleProduct.url }}">
+               <div class="first-bundle-products bundled">
+                 <h3 class="bundle-products-heading">{{ bundleProduct.title }}</h3>
+
+             
+                 {%- for option in bundleProduct.options_with_values -%}
+                 {%- capture color_option_index -%}option{{ forloop.index }}{%- endcapture -%}
+                 {%- assign downcase_option = option.name | downcase -%}
+
+                 {%- unless color_label contains downcase_option -%}
+                 {%- continue -%}
+                 {%- endunless -%}
+
+                 <img src="{{ bundleProduct.images[forloop.index0] | img_url: 'medium' }}" alt=""
+                   class="img-responsive" />
+   				</a>
+                 
+                   <div class="bundle-products-description">
+                 			{{ bundleProduct.metafields.global.description}}
+                 </div>
+
+                 <ul class="product-item__available-colors list--unstyled">
+                   {%- for value in option.values -%}
+                   {%- assign downcase_value = value | downcase -%}
+                   {%- assign color_swatch_white = false -%}
+
+                   {%- if 'white,blanc,blanco,白,weiß,vit,branco' contains downcase_value -%}
+                   {%- assign color_swatch_white = true -%}
+                   {%- endif -%}
+
+                   {%- for variant in bundleProduct.variants -%}
+                   {%- if variant[color_option_index] == value -%}
+                   {%- assign first_variant_for_color = variant -%}
+                   {%- break -%}
+                   {%- endif -%}
+                   {%- endfor -%}
+               
+
+
+
+                   <li class="product-item__color" title="{{ value }}">
+                     <a href="#" data-id="{{ first_variant_for_color.id }}" data-price="{{ first_variant_for_color.price | money }}"
+                       class="color-swatch color-swatch--mini bundle-sku {% if color_swatch_white %}color-swatch--white{% endif %}"
+                       style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.png' | asset_url }})"></a>
+                   </li>
+                   {%- endfor -%}
+                 </ul>
+
+                 {%- break -%}
+                 {%- endfor -%}
+                 
+                 
+                 
+                  <div class="bundle-products-equipment">
+                   <img src="{{ 'Icon_Boxes.svg' | asset_url }}" alt=""><span>{{ bundleProduct.metafields.global.equipment }}</span>
+                 </div>
+                 
+                 <div class="product__payment-container">
+ 
+                   <form class="product-form" action="/cart/add" data-productid="{{bundleProduct.id}}" method="post">
+                     <input type="hidden" name="id" data-productid="{{bundleProduct.id}}" class="product-select"
+                       value="{{ bundleProduct.variants[0].id }}"
+                       data-variant-title="{{ bundleProduct.variants[0].title }}" />
+                     <button type="submit" class="product__add-to-cart button button--primary">
+                       {{ bundleProduct.price | money }}<!-- anders -->
+                       <i class="fa fa-product-price fa-arrow-right" aria-hidden="true"></i>
+                     </button>
+                   </form>
+                 </div>
+
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               {%- if bundleProduct2 !=blank -%}
+               <a href="{{ bundleProduct2.url }}">
+               <div class="second-bundle-products bundled">
+                 <h3 class="bundle-products-heading">{{ bundleProduct2.title }}</h3>
+                 
+                 {%- for option in bundleProduct2.options_with_values -%}
+                 {%- capture color_option_index -%}option{{ forloop.index }}{%- endcapture -%}
+                 {%- assign downcase_option = option.name | downcase -%}
+
+                 {%- unless color_label contains downcase_option -%}
+                 {%- continue -%}
+                 {%- endunless -%}
+
+                 <img src="{{ bundleProduct2.images[forloop.index0] | img_url: 'medium' }}" alt=""
+                   class="img-responsive" />
+
+                 </a>
+
+                             <div class="bundle-products-description">
+                 			{{ bundleProduct2.metafields.global.description}}
+                 </div>
+                 <ul class="product-item__available-colors list--unstyled">
+                   {%- for value in option.values -%}
+                   {%- assign downcase_value = value | downcase -%}
+                   {%- assign color_swatch_white = false -%}
+
+                   {%- if 'white,blanc,blanco,白,weiß,vit,branco' contains downcase_value -%}
+                   {%- assign color_swatch_white = true -%}
+                   {%- endif -%}                   
+
+                   {%- for variant in bundleProduct2.variants -%}
+                   {%- if variant[color_option_index] == value -%}
+                   {%- assign first_variant_for_color = variant -%}
+                   {%- break -%}
+                   {%- endif -%}
+                   {%- endfor -%}
+                
+
+                   <li class="product-item__color" title="{{ value }}">
+                      <a href="#" data-id="{{ first_variant_for_color.id }}" data-price="{{cart.currency.symbol}} {{ first_variant_for_color.price | money }}"
+                       class="color-swatch color-swatch--mini bundle-sku {% if color_swatch_white %}color-swatch--white{% endif %}"
+                       style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.png' | asset_url }})"></a>
+                   </li>
+                   {%- endfor -%}
+                 </ul>
+
+                 {%- break -%}
+                 {%- endfor -%}
+                 
+                       
+
+                 
+                 <div class="bundle-products-equipment">
+                   <img src="{{ 'Icon_Boxes.svg' | asset_url }}" alt=""><span>{{ bundleProduct2.metafields.global.equipment }}</span>
+                 </div>
+
+
+                 <div class="product__payment-container">
+                   <form class="product-form" action="/cart/add" data-productid="{{bundleProduct2.id}}" method="post">
+                     <input type="hidden" name="id" data-productid="{{bundleProduct2.id}}" class="product-select"
+                       value="{{ bundleProduct2.variants[0].id }}"
+                       data-variant-title="{{ bundleProduct2.variants[0].title }}" />
+                     <button type="submit" class="product__add-to-cart button button--primary">
+                       {{ bundleProduct2.price | money }}<!-- anders -->
+                       <i class="fa fa-product-price fa-arrow-right" aria-hidden="true"></i>
+                     </button>
+                   </form>
+                 </div>
+               </div>
+
+               {%- endif -%}
+             </div>
+           </div>
+           {%- endif -%}
+         </div>
+
+
+{%- endif -%}
+        
+
+{%- assign connected = product.metafields.global.connectedHandle -%}      
+
+        <div class="grid__cell  description-prod-cust">
+          <div class="product__details">
+
+            <div class="product__description">
+              <div class="table-wrapper">
+                <table>
+                  <tr>
+                    <td>
+                      <div class="newsletter__cta">Let's get technical <div class="newsletter__notice">
+                          <p>All the details</p>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td>
+                      <ul class="switch__description">
+                        <li><a class="active" data-id="{{product.id}}" href="#">{{ product.title }}</a></li>
+                        <li><a href="#" data-id="{{all_products[connected].id}}"> {{ all_products[connected].title }}
+                          </a></li>
+                      </ul>
+                    </td>
+                </table>
+              </div>
+            </div>
+            {%- if product.description != blank -%}
+            <div class="product__description rte b-{{ product.id }}">
+              {{ product.description }}
+            </div>
+            {%- endif -%}
+            {%- if all_products[connected].description != blank -%}
+            <div style="display: none;" class="product__description rte b-{{ all_products[connected].id }}">
+              {{ all_products[connected].description }}
+            </div>
+            {%- endif -%}
+            {%- if section.settings.show_share_buttons -%}
+            {%- include 'share-buttons' -%}
+            {%- endif -%}
+            {%- include 'product-tabs-pod' -%}
+          </div>
+        </div>
+        
+        {%- if product.metafields.global.imageFullWidth!=blank -%}
+          <div class="product__image-max-width">
+            <img class="" src="{{  product.metafields.global.imageFullWidth  }}" alt="">
+          </div>
+        {%- endif -%}
+
+
+
+        </div>
+        </div>
+        </div>
+      </div>
+ 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var initProduct = function(productElement) {
+      productElement.trademarkProduct({
+        product: {{ product | json }},
+        enableHistoryState: true,
+        optionsWithValues: {{ product.options_with_values | json }},
+        allowSelectingSoldOutVariants: (productElement.attr('data-allow-selecting-sold-out-variants') === 'true')
+      });
+    };
+
+    initProduct($('#product-{{ product.id }}'));
+                  
+    $(document).ready(function(){
+      
+         $('.product__description table td').each(function(r,v){      
+        $(v).attr('style','width:50%;');
+      });
+      
+      
+      
+      $('.switch__description a').click(function(e){
+        
+        	e.preventDefault();        
+        	$('.switch__description a').removeClass('active');           
+        	$('.product__description.rte').hide();
+	        $(this).addClass('active');        	
+            
+            var selector='.product__description.rte.b-'+$(this).data('id');
+            $('.product__description.rte').hide();
+        	$(selector).show();
+        
+        	
+      
+      })
+    })
+    
+
+    $(document).on('shopify:section:unload', '#shopify-section-product-template', function(event) {
+      $(event.target).find('#product-{{ product.id }}').data('plugin_trademarkProduct').destroy();
+    });
+
+    $(document).on('shopify:section:load', '#shopify-section-product-template', function(event) {
+      initProduct($(event.target).find('#product-{{ product.id }}'));
+    });
+  });
+</script>
+
+<style>
+  #slide-wrapper-{{ image.id }} {
+    max-width: {{ max_width_mobile | default: 500 }}px;
+  }
+
+  @media screen and (min-width: 801px) {
+    #slide-wrapper-{{ image.id }} {
+      max-width: {{ max_width_desktop | default: 900 }}px;
+      }
+  }
+  {%- if section.settings.enable_image_zoom -%}
+    .product__slide:not(.product__slide--video) {
+      cursor: zoom-in;
+    }
+  {%- endif -%}
+</style>
+
+
+{% schema %}
+{
+  "name": "Product page",
+  "settings": [ 
+    {
+      "type": "checkbox",
+      "id": "show_extra_options",
+      "label": "Show Extra Options",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bundle-products-block",
+      "label": "Show Bundle Products Block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "first-bundle-heading",
+      "label": "Bundle heading"
+    },
+    {
+      "type": "product",
+      "id": "show_product_set",
+      "label": "Product in set"
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_selecting_sold_out_variants",
+      "label": "Allow selection of sold out variants",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variants_if_only_one",
+      "label": "Hide selectors if there is only one variant",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_color_swatch",
+      "label": "Show color swatch",
+      "info": "Colors appear white? [Learn more](http://support.maestrooo.com/article/80-product-uploading-custom-color-for-color-swatch).",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_size_swatch",
+      "label": "Show size swatch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_button",
+      "label": "Show dynamic checkout button",
+      "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "Enable image zoom",
+      "info": "This only works on large screens.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Learn more about product tabs.](http://support.maestrooo.com/article/82-product-adding-global-tabs-to-product-pages)"
+    },
+    {
+      "type": "page",
+      "id": "tab_page_1_handle",
+      "label": "First page"
+    },
+    {
+      "type": "page",
+      "id": "tab_page_2_handle",
+      "label": "Second page"
+    },
+    {
+      "type": "paragraph",
+      "content": "Trademark also allows you to add specific tabs for a given product only. [Learn more about this feature](http://support.maestrooo.com/article/83-product-adding-different-tabs-per-product)."
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "paragraph",
+      "content": "You need to install [Shopify's free Product Reviews](https://apps.shopify.com/product-reviews) app before enabling this option."
+    },
+    {
+      "type": "checkbox",
+      "id": "reviews_enabled",
+      "label": "Enable",
+      "default": false
+    },
+
+            { 
+            "type":"image_picker",
+            "id":"image_max_widt",
+            "label":"Picture",
+            "info":"1200 x 800px .jpg recommended"
+            }
+  ]
+}
+{% endschema %}

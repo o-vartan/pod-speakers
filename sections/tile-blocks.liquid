@@ -1,0 +1,85 @@
+
+<section class="s-tile-blocks  section-{{ section.id }}">
+  <div class="container">
+      <div class="s-tile-blocks__block">
+            <div class="s-tile-blocks__left-image" style="{%- if section.settings.tile_direction -%} grid-column: 2 {%- endif -%}">  
+                <a href="">              
+                    <img src="{{ section.settings.tile_picture-left | img_url: '600x900' }}" alt="">  
+                </a>    
+            </div>         
+   
+
+            <div class="s-tile-blocks__tile_heading" style="background-color:{{ section.settings.tile_heading_bg }};
+            color:{{ section.settings.tile_heading_font_color }};{%- if section.settings.tile_direction -%} grid-column: 1 {%- endif -%}">
+              <p>{{ section.settings.tile_heading }}</p>
+            </div>
+
+            <div class="s-tile-blocks__right-image"  style="{%- if section.settings.tile_direction -%} grid-column: 1 {%- endif -%}">
+                <a href="">              
+                    <img src="{{ section.settings.tile_picture-right | img_url: '460x460' }}" alt="">   
+                </a>
+            </div>
+       
+
+     
+      </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+{ 
+  "name":"Tile blocks",
+  "settings":[ 
+     { 
+        "type":"checkbox",
+        "id":"tile_direction",
+        "label":"Right or left direction tile",
+        "default":false
+     },
+     { 
+      "type":"image_picker",
+      "id":"tile_picture-left",
+      "label":"Tile picture left",
+      "info":"600 x 900px .jpg recommended"
+      },
+      { 
+          "type":"text",
+          "id":"tile_heading",
+          "label":"tile_heading-left",
+          "default":"Tile heading"
+      },
+      {
+        "type": "color",
+        "id": "tile_heading_bg",
+        "label": "Headings BG",
+        "default": "#bd081c"
+      },
+      {
+        "type": "color",
+        "id": "tile_heading_font_color",
+        "label": "Headings font color",
+        "default": "#FFF"
+      },
+      { 
+          "type":"image_picker",
+          "id":"tile_picture-right",
+          "label":"Tile picture right",
+          "info":"460 x 460px .jpg recommended"
+      }
+  ],
+  "presets":[ 
+     { 
+        "category":"image",
+        "name":"Tile blocks"
+     }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

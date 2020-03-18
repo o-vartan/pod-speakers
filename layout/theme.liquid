@@ -1,0 +1,161 @@
+<!doctype html>
+
+<!--[if IE 9 ]><html class="no-js csscalc no-flexbox ie9" lang="{{ shop.locale }}"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="{{ shop.locale }}"><!--<![endif]-->
+  <head>
+{% assign mlveda_code_flag = false %}
+  
+  {% if mlveda_code_flag == true %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script>
+      	$m = $.noConflict(true);
+	 window.pattern = /^(do|sv|ee|fi|fr|gd|gp|gg|hu|is|im|il|kz|ke|kg|la|mo|mk|mh|mq|ms|ma|nl|ne|ng|no|pw|py|pl|pt|kn|st|sc|sg|sk|za|sr|sj|th|to|tm|tc|uz|vu|vn|zm|af|al|as|ao|ai|an|ag|ar|as|bb|by|aq|bm|bq|bv|au|vg|bs|cv|bh|cf|bd|cn|be|co|ba|ci|bw|dk|bn|dm|bi|cd|cm|ec|ca|eg|td|gq|cx|er|cc|et|cr|eu|ga|gh|cy|gi|dj|gu|eu|gt|fk|gn|fo|gw|gf|hm|pf|hn|gm|iq|ge|ie|de|jm|gr|jp|in|ki|id|lr|je|mw|lv|my|ly|mu|li|yt|mv|mx|mc|mn|mz|nr|np|ni|nu|nf|pk|na|ph|oc|pn|om|qa|pg|re|pr|sh|ro|ru|rw|sm|bl|rs|pm|sx|vc|gs|sa|sd|sl|se|si|tj|tz|sb|tt|sa|tn|es|gb|lk|va|ch|zw|sy|tw|tl|tg|tr|um|vi|ug|us|uy|ve|af|ax|dz|ad|am|aw|at|az|bz|bj|bt|bo|br|io|bg|bf|kh|ky|cl|km|cg|ck|hr|cu|cw|cz|fj|tf|gl|gy|ht|hk|ir|it|jo|kw|lb|ls|lt|lu|mg|ml|mt|mr|fm|md|me|mm|na|nc|nz|kp|mp|ps|pa|pe|lc|mf|ws|sn|so|kr|ss|sz|tk|tv|ua|ae|wf|eh|ye|intl)$/;
+      </script>
+
+  {% endif %}
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+
+    <title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {%- include 'social-meta-tags' -%}
+
+    {% include 'wlm-head' %}
+{{ content_for_header }}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700&display=swap" rel="stylesheet">
+    
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" async></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{ 'modernizr.min.js' | asset_url }}"></script>
+
+    <script>
+      // This allows to expose several variables to the global scope, to be used in scripts
+      window.theme = {
+        template: {{ template | json }},
+        currentPage: {{ current_page }},
+        localeRootUrl: {% if request.locale.primary %}''{% else %}{{ request.locale.root_url | json }}{% endif %},
+        shopCurrency: {{ shop.currency | json }},
+        moneyFormat: {{ shop.money_format | json }},
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        collectionSortBy: {{ collection.sort_by | default: collection.default_sort_by | json }},
+        locale: {{ shop.locale | json }}
+      };
+
+      window.languages = {
+        productLabelsOnSale: {{ 'product.labels.on_sale' | t | json }},
+        productFormAddToCart: {% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t | json }}{% else %}{{ 'product.form.add_to_cart' | t | json }}{% endif %},
+        productFormSoldOut: {{ 'product.form.sold_out' | t | json }},
+        productFormUnavailable: {{ 'product.form.unavailable' | t | json }},
+        cartEstimatedShipping: {{ 'cart.general.estimated_shipping' | t | json }},
+        shippingEstimatorSubmit: {{ 'cart.shipping_estimator.submit' | t | json }},
+        shippingEstimatorSubmitting: {{ 'cart.shipping_estimator.submitting' | t | json }},
+        recoverPasswordTitle: {{ 'customer.recover_password.title' | t | json }},
+        cartDeleteTitle: {{ 'cart.items.delete' | t | json }}
+      }
+    </script>
+
+ 
+    {%- include 'microdata-schema' -%}
+
+    {%- if template.name == 'product' -%}
+      {%- comment -%}This is used on product pages to power the "features" section{%- endcomment -%}
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" crossorigin="anonymous">
+    {%- endif -%}
+  {% if mlveda_code_flag == true %}
+  	{% if template != 'cart' %}
+		<script>
+		  $m("<style type='text/css'>span.money{ display: none; }</style>").appendTo("head");
+          
+          {% if template contains 'product' %}
+            $m("<style type='text/css'>button[name='add']{visibility : hidden;}</style>").appendTo("head");
+          {% endif %}
+          
+		</script>
+	{% endif %}
+  {% endif %}
+
+    {{ 'override.css.scss' | asset_url | stylesheet_tag }}
+    
+  {% include 'shogun-head' %}
+</head>
+
+  {%- assign template_handle = template | replace: '.', ' ' | truncatewords: 1, '' | handle | replace: '_', '-' -%}
+  {% include 'th-bundle-product' %}
+  <body class="trademark--v3 template-{{ template_handle }} {% if page.template_suffix != blank %}template-{{ template_handle }}-{{page.template_suffix}}{% endif %}">
+    {%- include 'svg-icons' -%}
+
+    {%- section 'popup' -%}
+
+    <div class="page__overlay"></div>
+
+    <div class="page__container {% if force_secondary_background %}page__container--secondary{% endif %}">
+      {%- section 'announcement' -%}
+
+      {%- section 'header' -%}
+
+      <main id="main" class="main" role="main">
+        {% if mlveda_code_flag == false %}
+          	{% comment %}{{ content_for_layout }}{% endcomment %}{% include 'wlm-body' %}	
+          {% endif %}
+
+          {% if mlveda_code_flag == true %}
+          <div class="mlvedaform">
+            {% comment %}{{ content_for_layout }}{% endcomment %}{% include 'wlm-body' %}
+            {% include 'mlveda-multipricing-options' %}
+          </div>
+          	{% include 'mlveda-multipricing-selectBox' %}
+
+          	{% include 'mlveda-multipricing-selectors' %}
+          {% endif %}
+      </main>
+
+      {%- section 'newsletter' -%}
+      {%- section 'footer' -%}
+    </div>
+
+    {%- if settings.currency_conversion_enabled -%}
+      <script src="//cdn.shopify.com/s/javascripts/currencies.js"></script>
+    {%- endif -%}
+
+    {%- if template.directory == 'customers' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
+      <script src="{{ 'customer_area.js' | shopify_asset_url }}"></script>
+    {%- endif -%}
+
+    {%- if template.name == 'cart' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
+    {%- endif -%}
+
+    <script src="{{ 'libs.js' | asset_url }}"></script>
+    <script src="{{ 'script.js' | asset_url }}" defer></script>
+  {% if mlveda_code_flag == true %}
+  	{% if template != 'cart' %}
+		{% include 'mlveda-multipricing-updateprice' %}
+  	{% else %}
+        <script>mlvedaFlagCalled = true;</script>
+  	{% endif %}
+  {% else %}
+		<script>mlvedaFlagCalled = true;</script>
+  {% endif %}
+
+
+
+</body>
+</html>

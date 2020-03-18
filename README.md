@@ -1,2 +1,2 @@
 # pod-speakers
-Shopify
+shopify
