@@ -1,2 +1,2 @@
-# pod-speakers
+# https://www.podspeakers.com/
 shopify
